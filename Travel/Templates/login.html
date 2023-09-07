@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login page</title>
+    <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0; /* Set the background color of the whole page */
+      font-family: Arial, sans-serif;
+    }
+
+    .login-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .login-form {
+      max-width: 400px;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .login-form h1 {
+      text-align: center;
+    }
+
+    .login-form label,
+    .login-form input[type="text"],
+    .login-form input[type="password"],
+    .login-form input[type="submit"] {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .login-form input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+<form action="login" method="POST">
+    {% csrf_token %}
+    <input type="text" name="username" placeholder="Enter username"><br>
+    <input type="password" name="password" placeholder="Enter password"><br>
+    <input type="submit">
+
+</form>
+{% for msg in messages%}
+{{msg}}
+{%endfor%}
+</body>
+</html>

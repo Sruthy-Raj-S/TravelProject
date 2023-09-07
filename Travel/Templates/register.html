@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+</head>
+<h2> Registration form</h2>
+<body>
+
+<style>
+    body {
+      background-color: #F8BBD0; /* Set the background color of the whole page */
+      font-family: Arial, sans-serif;
+    }
+
+    .registration-container {
+      max-width: 400px;
+      margin: 0 auto;
+      margin-top: 0;
+      padding: 20px;
+      background-color: #FFCDD2;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .registration-container h1 {
+      text-align: center;
+    }
+
+    .registration-container label,
+    .registration-container input[type="text"],
+    .registration-container input[type="email"],
+    .registration-container input[type="password"],
+    .registration-container input[type="submit"] {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    .registration-container input[type="submit"] {
+      background-color: #4CAF50;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<form action="" method="post">
+    {% csrf_token%}
+    <input type="text" name="username" placeholder="Enter username"><br>
+    <input type="text" name="Firstname" placeholder="Enter Firstname"><br>
+    <input type="text" name="Lastname" placeholder="Enter Lastname"><br>
+    <input type="email" name="Email id" placeholder="Enter your email id"><br>
+    <input type="password" name="password" placeholder="Enter password"><br>
+    <input type="password" name="Confirm password" placeholder="Confirm password"><br>
+    <input type="submit">
+
+</form>
+{% for msg in messages%}
+{{msg}}
+{%endfor%}
+</body>
+</html>
